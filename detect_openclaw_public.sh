@@ -12,9 +12,10 @@
 # THIS SCRIPT MAKES NO CHANGES TO THE SYSTEM.
 #
 # UPDATES:
-#   - LOG_DIR must be configured before use (line 27)
+#   - LOG_DIR must be configured before use (line 28)
 #   - Enhanced brew detection with fallback to 'which brew' for non-standard paths
 #   - Homebrew auto-updates suppressed during script execution
+#   - Fixed logging of zero local users to avoid empty output
 ###############################################################################
 
 # Exit on undefined variables
@@ -161,7 +162,7 @@ while IFS= read -r username; do
     fi
 done < <(dscl . list /Users)
 
-log "Found ${#LOCAL_USERNAMES[@]} local user(s): ${LOCAL_USERNAMES[*]}"
+log "Found ${#LOCAL_USERNAMES[@]} local user(s): ${LOCAL_USERNAMES[*]:-}"
 
 # Check if file/directory exists
 check_path() {
