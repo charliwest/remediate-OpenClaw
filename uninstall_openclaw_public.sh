@@ -12,7 +12,7 @@
 # THIS SCRIPT MAKES NO CHANGES TO THE SYSTEM.
 #
 # UPDATES:
-#   - LOG_DIR must be configured before use (line 23)
+#   - LOG_DIR must be configured before use (line 27)
 #   - Enhanced brew detection with fallback to 'which brew' for non-standard paths
 #   - Homebrew auto-updates suppressed during script execution
 ###############################################################################
